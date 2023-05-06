@@ -1,0 +1,381 @@
+:root{
+    /* font size  */
+    --font-96  : 6rem;
+    --font-80  : 5rem;
+    --font-64  : 4rem;
+    --font-48  : 3rem;
+    --font-32  : 2rem;
+    --font-28  : 1.75rem;
+    --font-20  : 1.25rem;
+    --font-17  : 1.06rem;
+    --font-16  : 1rem;
+    --font-14  : 0.875rem;
+    --font-10  : 0.625rem;
+    /* colors  */
+
+    --primary-clr : #FCF1B1 ;
+    --secondary-clr : #FF9933 ;
+    --white : #fff;
+    --ash : #FEFEFE;
+    --off-white : #F5F5F5;
+    --fade : #6C7275;
+    --black : #0C0C0C;
+    --green:#CFEDE4;
+
+    /* gradient color  */
+    --gradient-1 :linear-gradient(270deg, #FCF1B1 0%, rgba(252, 241, 177, 0) 100%); 
+
+    /* box shadow   */
+
+    --shadow-1 : 0px 24px 60px rgba(0, 0, 0, 0.1);
+
+    /* font family  */
+    --inter: 'Inter', sans-serif;
+    --karla: 'Karla', sans-serif;
+
+    /* transitions  */
+    --all-ease : all 0.3s ease-in-out;
+}
+
+body{
+    font-family: var(--inter) !important;
+    font-weight: 400 !important;
+    background-color: var(--primary-clr) !important;
+}
+
+p{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.common-btn{
+    display: inline-block;
+    text-decoration: none;
+    transition: var(--all-ease);
+}
+
+
+/* custom css end  */
+
+/* header start  */
+
+header{
+    padding: 64px 0 17px;
+}
+
+/* header end  */
+
+/* banner start  */
+
+/* banner texts  */
+
+.banner-text{
+    margin-bottom: 26px;
+}
+
+.title{
+    font-size:var(--font-96);
+    font-weight: 900;
+    line-height: 117%;
+    letter-spacing: -0.04em;
+    color: var(--black);
+    transition: var(--all-ease);
+}
+
+.action-btn{
+    padding: 24px 20px;
+    background-color: var(--secondary-clr);
+    font-size: var(--font-32);
+    font-weight: 900;
+    color: var(--white);
+}
+
+.action-btn:hover{
+    color: var(--white);
+}
+
+/* banner img  */
+
+.banner-img img{
+    width: 100vw;
+    transition: var(--all-ease);
+}
+
+/* banner end  */
+
+/* conversation start  */
+
+.conversation{
+    padding-top: 54px;
+}
+
+.chatbox{
+    height: calc(100vh - (160px + 45px + 54px));
+    width: 100%;
+    row-gap: 24px;
+    background-color: var(--ash);
+    box-shadow: var(--shadow-1);
+    border-radius: 8px;
+    border: 1px solid #E8ECEF;;
+}
+
+.chat-form{
+    padding: 32px 40px;
+    background-color: var(--off-white);
+}
+
+
+.input-field{
+    width: 88%;
+}
+
+.button-feild{
+    width: 10%;
+}
+
+.input-field input,
+.submit-btn{
+    height: 64px;
+    width: 100%;
+    font-size: var(--font-20);
+}
+
+.input-field input{
+    padding:0 24px;
+    font-family: var(--karla);
+    font-size: var(--font-20);
+    border-radius: 4px;
+    border: 2px solid #E8ECEF;
+    outline: none;
+    line-height: 24px;
+}
+
+.input-field input::placeholder{
+    text-transform: capitalize;
+    color: var(--fade);
+}
+
+.submit-btn{
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--black);
+    background-color: var(--secondary-clr);
+    border: none;
+    border-radius: 4px;
+}
+
+.conversation .messages{
+    width: 100%;
+    height: 100%;
+    padding:10px 47px;
+    row-gap: 24px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: auto;    
+}
+
+.message{
+    column-gap: 15px;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+.user-img{
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    background-color:#ECECEC ;
+    border-radius: 50%;
+}
+
+.reverse .msg-text{
+    background-color: var(--primary-clr);
+}
+
+.msg-text{
+    padding: 16px;
+    background-color: var(--green);
+    border-radius: 8px;
+}
+
+.msg-text p{
+   font-size: var(--font-17);
+    color: var(--black);
+    line-height: 24px;
+}
+
+
+/* conversation end  */
+
+/* footer start  */
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:var(--gradient-1);
+    padding: 13px 0;
+}
+
+.copyright p{
+    color: var(--black);
+    font-size: var(--font-14);
+    line-height: 17px;
+    letter-spacing: -0.04em;
+}
+
+.copyright p span{
+    color: var(--black);
+    font-size: var(--font-16);
+    font-weight: 500;
+    line-height: 19px;
+}
+
+
+/* footer end  */
+
+/* responsive design start */
+@media screen and  (min-width:1200px) and (max-width:1399px){
+    /* banner start  */
+    .title{
+        font-size:var(--font-80);
+    }
+}
+
+@media screen and  (min-width:768px) and (max-width:1199px){
+    /* banner start  */
+    .title{
+        font-size:var(--font-48);
+    }
+
+    .action-btn{
+        font-size: var(--font-20);
+        padding: 16px 20px;
+    }
+
+    /* banner end  */
+
+    /* conversation start  */
+
+        .input-field{
+            width: 78%;
+        }
+
+        .button-feild{
+            width: 20%;
+        }
+            
+        .msg-text p{
+            font-size: var(--font-14);
+            line-height: 20px;
+        }
+
+    /* conversation end  */
+}
+
+
+@media screen and  (min-width:576px) and (max-width:767px){
+    /* banner start  */
+    .title{
+        font-size:var(--font-32);
+    }
+
+    .action-btn{
+        font-size: var(--font-16);
+        padding: 14px 10px;
+    }
+
+    /* banner end  */
+    
+    /* conversation start  */
+
+    .conversation .messages{
+        padding:0 20px;
+    }
+
+    
+    .msg-text p{
+        font-size: var(--font-14);
+        line-height: 20px;
+    }
+
+    .input-field{
+        width: 78%;
+    }
+
+    .button-feild{
+        width: 20%;
+    }
+
+    .input-field input,
+    .submit-btn{
+        height: 50px;
+        font-size: var(--font-16);
+
+    }
+
+    
+
+
+     /* conversation end  */
+}
+
+@media screen and  (max-width:575px){
+    /* banner start  */
+    .title{
+        font-size:var(--font-32);
+    }
+
+    .action-btn{
+        font-size: var(--font-16);
+        padding: 14px 10px;
+    }
+
+    /* .conversation start */
+
+    
+    .conversation .messages{
+        padding:0 20px;
+    }
+
+    .msg-text p{
+        font-size: var(--font-10);
+        line-height: 16px;
+    }
+
+    
+.user-img{
+    width: 40px;
+    height: 40px;
+}
+
+
+    .chat-form {
+        padding: 20px 14px;
+    }
+
+    .input-field{
+        width: 74%;
+    }
+
+    .button-feild{
+        width: 24%;
+    }
+
+    .input-field input{
+        padding: 0 10px;
+    }
+    
+    .input-field input,
+    .submit-btn{
+        height: 40px;
+        font-size: var(--font-14);
+
+    }
+ 
+
+    /* .conversation end */
+}
