@@ -9,7 +9,7 @@ const Form = () => {
     event.preventDefault();
     // Call your OpenAI API here using the inputText state
     processRequest(inputText)
-    setModiMessages([...modiMessages, {user: true , message: inputText}])
+    // setModiMessages([...modiMessages, {user: true , message: inputText}])
   };
 
   const handleInputChange = (event) => {

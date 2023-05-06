@@ -31,9 +31,11 @@ const AiProvider = ({ children }) => {
   const [output, setOutput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  console.log(modiMessages)
+
   //functions
   const processRequest = async (input) => {
-    console.log(input)
+    setModiMessages([...modiMessages, {user: true , message: input}])
     try {
       const response = await openai.createCompletion({
         model: "text-davinci-003",
