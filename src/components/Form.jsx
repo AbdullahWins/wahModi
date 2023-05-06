@@ -3,13 +3,13 @@ import { AiContext } from "../contexts/AiContext";
 
 const Form = () => {
   const [inputText, setInputText] = useState("");
-  const {processRequest} = useContext(AiContext)
+  const {processRequest, modiMessages, setModiMessages} = useContext(AiContext)
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // Call your OpenAI API here using the inputText state
     processRequest('act like a pronstar named jonny sins and give advice about', "how to join porn industry")
-    console.log("Input text: ", inputText);
+    setModiMessages([...modiMessages, {user: true , message: inputText}])
   };
 
   const handleInputChange = (event) => {
