@@ -3,6 +3,7 @@ import openai from "openai";
 import { AiContext } from "../contexts/AiContext";
 
 function ChatBot() {
+  
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
 
