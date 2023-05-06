@@ -169,8 +169,6 @@ header{
     height: 100%;
     padding:10px 47px;
     row-gap: 24px;
-    flex-direction: column;
-    flex-wrap: wrap;
     overflow: auto;    
 }
 
