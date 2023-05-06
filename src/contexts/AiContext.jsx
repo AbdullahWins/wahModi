@@ -2,28 +2,28 @@ import React, { createContext, useState } from "react";
 import { Configuration, OpenAIApi } from "openai"
 
 const configuration = new Configuration({
-  apiKey: import.meta.env.OPENAI_API_KEY,
+  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
 
 export const AiContext = createContext();
 
-export function openaiPlugin() {
-  return {
-    name: "openai",
-    resolveId(source) {
-      if (source === "openai") {
-        return source;
-      }
-    },
-    load(id) {
-      if (id === "openai") {
-        return `export default ${JSON.stringify(openai)}`;
-      }
-    },
-  };
-}
+// export function openaiPlugin() {
+//   return {
+//     name: "openai",
+//     resolveId(source) {
+//       if (source === "openai") {
+//         return source;
+//       }
+//     },
+//     load(id) {
+//       if (id === "openai") {
+//         return `export default ${JSON.stringify(openai)}`;
+//       }
+//     },
+//   };
+// }
 
 const AiProvider = ({ children }) => {
   //states
@@ -32,12 +32,12 @@ const AiProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   //functions
-  const processRequest = async (prompt, input) => {
-    console.log(prompt, input)
+  const processRequest = async (input) => {
+    console.log(input)
     try {
       const response = await openai.createCompletion({
         model: "text-davinci-003",
-        prompt: `${prompt}:\n\n ${input}`,
+        prompt: `Act as India's Prime Minister Narandra Modi and reply to the following message:\n\n ${input}`,
         temperature: 0,
         max_tokens: 1000,
         top_p: 1.0,

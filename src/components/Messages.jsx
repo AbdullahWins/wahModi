@@ -8,8 +8,8 @@ const Messages = () => {
         <div className="d-flex flex-col-reverse justify-content-end overflow-hidden">
             <div className="d-flex flex-row messages gap-3">
                 {
-                    modiMessages?.map((modiMessage)=> {
-                       return <Message user={modiMessage?.user} message={modiMessage?.message}></Message>
+                    modiMessages?.map((modiMessage, i)=> {
+                       return <Message key={i} user={modiMessage?.user} message={modiMessage?.message}></Message>
                     })
                 }
             

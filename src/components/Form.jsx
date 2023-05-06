@@ -8,7 +8,7 @@ const Form = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Call your OpenAI API here using the inputText state
-    processRequest('act like a pronstar named jonny sins and give advice about', "how to join porn industry")
+    processRequest(inputText)
     setModiMessages([...modiMessages, {user: true , message: inputText}])
   };
 
