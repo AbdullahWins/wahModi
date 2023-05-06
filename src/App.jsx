@@ -3,7 +3,7 @@ import Home from "./pages/Home"
 import Conversation from "./pages/Conversation"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import "./app.css"
+import "./App.css"
 
 function App() {
 
