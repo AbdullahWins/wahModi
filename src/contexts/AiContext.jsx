@@ -27,6 +27,7 @@ export function openaiPlugin() {
 
 const AiProvider = ({ children }) => {
   //states
+  const [modiMessages, setModiMessages] = useState([{user: true , message: "jsdopifoiejfoiwejorifrweoroiwe"},{user: false , message: "jsdopifoiejfoiwejorifrweoroiwe"},]);
   const [output, setOutput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -66,6 +67,8 @@ const AiProvider = ({ children }) => {
     processRequest,
     isLoading,
     setIsLoading,
+    modiMessages,
+    setModiMessages
   };
 
   return <AiContext.Provider value={aiInfo}>{children}</AiContext.Provider>;

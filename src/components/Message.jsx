@@ -2,7 +2,8 @@ import { useState } from "react";
 import { sender as senderImg ,user as userImg} from "../assets/images/getImages";
 
 
-const Message = ({user,children}) => {
+const Message = ({user, message}) => {
+    console.log(user, message)
     return (
         <div className={`message d-flex align-items-start  ${user && 'reverse'} `}>
             {/* img  */}
@@ -11,7 +12,7 @@ const Message = ({user,children}) => {
                 </div>
             {/* message  */}
             <div className="msg-text">
-                {children}
+                {message}
             </div>
         </div>
     )
