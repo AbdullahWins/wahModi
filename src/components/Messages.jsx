@@ -4,12 +4,13 @@ import { AiContext } from "../contexts/AiContext";
 
 const Messages = () => {
     const {modiMessages} = useContext(AiContext)
+
     return (
         <div className="d-flex flex-col-reverse justify-content-end overflow-hidden">
-            <div className="d-flex flex-row messages gap-3">
+            <div className="d-flex flex-column messages gap-3">
                 {
                     modiMessages?.map((modiMessage, i)=> {
-                       return <Message key={i} user={modiMessage?.user} message={modiMessage?.message}></Message>
+                       return <Message key={i} user={modiMessage?.user} message={modiMessage?.message} ></Message>
                     })
                 }
             
