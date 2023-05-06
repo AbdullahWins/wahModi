@@ -2,14 +2,13 @@ import React, { useContext, useState } from "react";
 import { AiContext } from "../contexts/AiContext";
 
 const Form = () => {
-  const [inputText, setInputText] = useState("");
-  const {processRequest, modiMessages, setModiMessages} = useContext(AiContext)
+  const [inputText, setInputText] = useState("")
+  const {processRequest} = useContext(AiContext)
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Call your OpenAI API here using the inputText state
     processRequest(inputText)
-    // setModiMessages([...modiMessages, {user: true , message: inputText}])
+    setInputText('')
   };
 
   const handleInputChange = (event) => {
@@ -23,9 +22,9 @@ const Form = () => {
           <div className="input-field">
             <input
               type="text"
-              placeholder="ask me anything"
               value={inputText}
               onChange={handleInputChange}
+              placeholder="ask me anything"
             />
           </div>
           <div className="button-feild">
