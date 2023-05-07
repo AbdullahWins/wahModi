@@ -17,7 +17,7 @@ const AiProvider = ({ children }) => {
   const [output, setOutput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // functions
+  // functions here
   const processRequest = async (input) => {
     const newModiMessages = [...modiMessages, { user: true, message: input }];
     setModiMessages(newModiMessages);
