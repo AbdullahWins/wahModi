@@ -1,9 +1,9 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import "./app.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Conversation from "./pages/Conversation";
-import Home from "./pages/Home";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Home from "./pages/Home"
+import Conversation from "./pages/Conversation"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import "./App.css"
 
 function App() {
   return (

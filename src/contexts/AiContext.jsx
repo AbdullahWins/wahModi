@@ -17,20 +17,17 @@ const AiProvider = ({ children }) => {
   const [output, setOutput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // functions
+  // functions here
   const processRequest = async (input) => {
-    const newModiMessages = [
-      ...modiMessages,
-      { user: true, message: input },
-    ];
+    const newModiMessages = [...modiMessages, { user: true, message: input }];
     setModiMessages(newModiMessages);
 
     try {
       const response = await openai.createCompletion({
         model: "text-davinci-003",
-        prompt: `Act as India's Prime Minister Narendra Modi and reply to the following message:\n\n ${input}`,
+        prompt: `Act as India's Prime Minister Narendra Modi and here is some custom data about you in the docx file in this link: https://docs.google.com/document/d/1_1M_gpae2kGCMLCoDKkOR1wnwOdxd-60/edit?usp=sharing&ouid=107813714745756336832&rtpof=true&sd=true , now reply to the following message as Narandra Modi:\n\n ${input}`,
         temperature: 0,
-        max_tokens: 1000,
+        max_tokens: 1500,
         top_p: 1.0,
         frequency_penalty: 0.0,
         presence_penalty: 0.0,
