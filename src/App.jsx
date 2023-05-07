@@ -6,17 +6,16 @@ import Footer from "./components/Footer"
 import "./App.css"
 
 function App() {
-
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/conversation' element={<Conversation />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/conversation" element={<Conversation />} />
       </Routes>
       <Footer />
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
