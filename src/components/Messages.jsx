@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import Message from "./Message.jsx"
 import { AiContext } from "../contexts/AiContext";
+import MessageAnimation from "../assets/animations/MessageAnimation";
 
 const Messages = () => {
-    const {modiMessages} = useContext(AiContext)
+    const {modiMessages, isProccesing} = useContext(AiContext);
 
     return (
         <div className="d-flex flex-col-reverse justify-content-end overflow-hidden">
@@ -13,6 +14,8 @@ const Messages = () => {
                        return <Message key={i} user={modiMessage?.user} message={modiMessage?.message} ></Message>
                     })
                 }
+
+                {isProccesing && <MessageAnimation></MessageAnimation>}
             
             </div>
         </div>
