@@ -24,12 +24,12 @@ const AiProvider = ({ children }) => {
     setModiMessages(newModiMessages);
 
     try {
-      setIsProccesing(true)
+      setIsProccesing(true);
       const response = await openai.createCompletion({
         model: "text-davinci-003",
         prompt:
           `https://docs.google.com/document/d/1_1M_gpae2kGCMLCoDKkOR1wnwOdxd-60/edit?usp=sharing&ouid=107813714745756336832&rtpof=true&sd=true` +
-          `read from this file and Act like India's Prime Minister Narendra Modi and give a detailed and constructive reply on:\n\n ${input}`,
+          `read from this file and Act like India's Prime Minister Narendra Modi and response based on the following text:\n\n ${input}`,
         // prompt: `Act as India's Prime Minister Narendra Modi and here is some custom data about you in the docx file in this link: https://docs.google.com/document/d/1_1M_gpae2kGCMLCoDKkOR1wnwOdxd-60/edit?usp=sharing&ouid=107813714745756336832&rtpof=true&sd=true , now reply to the following message as Narandra Modi:\n\n ${input}`,
         temperature: 0,
         max_tokens: 2000,
@@ -50,7 +50,7 @@ const AiProvider = ({ children }) => {
 
       setOutput(responseCorrect);
       setModiMessages(newResponseMessages);
-      setIsProccesing(false)
+      setIsProccesing(false);
     } catch (error) {
       console.log(error.message);
     }
@@ -69,7 +69,7 @@ const AiProvider = ({ children }) => {
     setIsLoading,
     modiMessages,
     setModiMessages,
-    isProccesing
+    isProccesing,
   };
 
   return <AiContext.Provider value={aiInfo}>{children}</AiContext.Provider>;
